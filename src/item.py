@@ -5,7 +5,7 @@ class Item:
     pay_rate = 1.0
     all = []
 
-    def init(self, name: str, price: float, quantity: int) -> None:
+    def __init__(self, name: str, price: float, quantity: int) -> None:
         """
         Создание экземпляра класса item.
 
