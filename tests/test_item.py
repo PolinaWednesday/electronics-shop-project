@@ -2,6 +2,13 @@
 from src.item import Item
 
 
+def test_init():
+    item = Item("Смартфон", 10000, 20)
+    assert item.name == "Смартфон"
+    assert item.price == 10000
+    assert item.quantity == 20
+
+
 def test_calculate_total_price():
     item = Item("Смартфон", 10000, 20)
     assert item.calculate_total_price() == 200000
