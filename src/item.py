@@ -1,5 +1,6 @@
-
 import csv
+
+
 class Item:
     """
     Класс для представления товара в магазине.
@@ -70,3 +71,4 @@ class Item:
         if not isinstance(other, Item):
             raise ValueError
         return self.quantity + other.quantity
+
