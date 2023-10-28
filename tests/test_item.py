@@ -1,5 +1,5 @@
 ﻿import pytest
-from src.item import Item
+from src.item import Item, InstantiateCSVError
 
 
 def test_init():
@@ -50,3 +50,13 @@ def test_repr():
 def test_str():
     item = Item("Смартфон", 10000, 20)
     assert str(item) == 'Смартфон'
+
+
+def test_instantiate_from_csv_not_file():
+    with pytest.raises(FileNotFoundError):
+        Item.instantiate_from_csv("../src/iteme.csv")
+
+
+def test_instantiate_from_csv_error_file():
+    with pytest.raises(InstantiateCSVError):
+        Item.instantiate_from_csv("../src/item.csv")
